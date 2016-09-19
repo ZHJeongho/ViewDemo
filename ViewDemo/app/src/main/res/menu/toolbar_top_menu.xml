@@ -5,12 +5,12 @@
         android:id="@+id/menu_setting"
         android:orderInCategory="100"
         android:icon="@drawable/ic_menu_white_24dp"
-        app:showAsAction="ifRoom"
+        app:showAsAction="never"
         android:title="@string/setting"/>
     <item
         android:id="@+id/menu_quit"
         android:icon="@drawable/ic_menu_white_24dp"
-        app:showAsAction="ifRoom"
+        app:showAsAction="never"
         android:orderInCategory="101"
         android:title="@string/quit"/>
 </menu>
