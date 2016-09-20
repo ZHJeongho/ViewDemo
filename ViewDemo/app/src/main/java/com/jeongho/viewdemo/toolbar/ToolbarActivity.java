@@ -7,6 +7,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jeongho.viewdemo.BaseActivity;
@@ -15,17 +17,21 @@ import com.jeongho.viewdemo.R;
 /**
  * Created by Jeongho on 2016/9/9.
  */
-public class ToolbarActivity extends BaseActivity implements Toolbar.OnMenuItemClickListener {
+public class ToolbarActivity extends BaseActivity implements Toolbar.OnMenuItemClickListener, View.OnClickListener {
 
     private Toolbar mToolbar;
+    private TextView mCenterTv;
+    private ImageButton mRightIb;
     @Override
     public void initView() {
         mToolbar = initToolbar(this, R.id.toolbar, "Title", R.drawable.align_justify);
+        mCenterTv = (TextView) findViewById(R.id.tv_center);
+        mRightIb = (ImageButton) findViewById(R.id.ib_right);
     }
 
     @Override
     public void initData() {
-
+        mCenterTv.setText(R.string.home);
     }
 
     @Override
@@ -38,6 +44,7 @@ public class ToolbarActivity extends BaseActivity implements Toolbar.OnMenuItemC
         });
         //第三步
         mToolbar.setOnMenuItemClickListener(this);
+        mRightIb.setOnClickListener(this);
     }
 
     @Override
@@ -78,5 +85,12 @@ public class ToolbarActivity extends BaseActivity implements Toolbar.OnMenuItemC
                 break;
         }
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.ib_right){
+            Toast.makeText(this, "right btn clicked", Toast.LENGTH_SHORT).show();
+        }
     }
 }
