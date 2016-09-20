@@ -2,7 +2,9 @@ package com.jeongho.viewdemo.toolbar;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -18,13 +20,7 @@ public class ToolbarActivity extends BaseActivity implements Toolbar.OnMenuItemC
     private Toolbar mToolbar;
     @Override
     public void initView() {
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbar.setTitle(R.string.toolbar_title);
-        mToolbar.setSubtitle(R.string.toolbar_subtitle);
-        mToolbar.setNavigationIcon(R.mipmap.ic_launcher);
-        mToolbar.setTitleTextColor(getResources().getColor(android.R.color.primary_text_light));
-        mToolbar.inflateMenu(R.menu.toolbar_top_menu);
-        setSupportActionBar(mToolbar);
+        mToolbar = initToolbar(this, R.id.toolbar, "Title", R.drawable.align_justify);
     }
 
     @Override
@@ -40,12 +36,34 @@ public class ToolbarActivity extends BaseActivity implements Toolbar.OnMenuItemC
                 Toast.makeText(ToolbarActivity.this, "Navigation clicked", Toast.LENGTH_SHORT).show();
             }
         });
+        //第三步
         mToolbar.setOnMenuItemClickListener(this);
     }
 
     @Override
     public int getContentViewId() {
         return R.layout.activity_toolbar;
+    }
+
+    public static void startAction(Context context) {
+        Intent intent = new Intent(context, ToolbarActivity.class);
+        context.startActivity(intent);
+    }
+
+    //第二步
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_top_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public Toolbar initToolbar(AppCompatActivity activity, int viewId, String title, int navigationId){
+        Toolbar toolbar = (Toolbar) activity.findViewById(viewId);
+        toolbar.setTitle(title);
+        toolbar.setNavigationIcon(navigationId);
+        //第一步
+        activity.setSupportActionBar(toolbar);
+        return toolbar;
     }
 
     @Override
@@ -60,10 +78,5 @@ public class ToolbarActivity extends BaseActivity implements Toolbar.OnMenuItemC
                 break;
         }
         return true;
-    }
-
-    public static void startAction(Context context) {
-        Intent intent = new Intent(context, ToolbarActivity.class);
-        context.startActivity(intent);
     }
 }
