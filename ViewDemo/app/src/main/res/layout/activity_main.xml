@@ -9,16 +9,25 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.jeongho.viewdemo.MainActivity">
+    tools:context="com.jeongho.viewdemo.MainActivity"
+    android:weightSum="1">
 
     <Button
         android:id="@+id/btn_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Toolbar Activity"/>
+
     <Button
         android:id="@+id/btn_custom_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Custom Activity"/>
+
+    <Button
+        android:text="StatusBar Activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_statusbar_activity"
+        />
 </LinearLayout>

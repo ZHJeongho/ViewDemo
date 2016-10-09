@@ -3,12 +3,13 @@
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MainActivity">
+        android:supportsRtl="true">
+        <activity android:name=".MainActivity"
+            android:theme="@style/CustomTheme.Day">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -17,6 +18,8 @@
         </activity>
         <activity android:name=".toolbar.ToolbarActivity"/>
         <activity android:name=".toolbar.CustomToolbarAty"/>
+        <activity android:name=".statusbar.StatusBarAty"
+            />
     </application>
 
 </manifest>

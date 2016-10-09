@@ -21,7 +21,7 @@ public class CustomToolbarAty extends BaseActivity{
 
     @Override
     public void initData() {
-        mCustomToolbar.setTitle(R.string.home);
+        //mCustomToolbar.setTitle(R.string.home);
     }
 
     @Override

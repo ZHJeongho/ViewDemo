@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimaryNight">#3F51B5</color>
+    <color name="colorPrimaryDarkNight">#303F9F</color>
+    <color name="colorAccentNight">#FF4081</color>
+
+    <color name="colorPrimaryDay">#BDBDBD</color>
+    <color name="colorPrimaryDarkDay">#ffffff</color>
+    <color name="colorAccentDay">#757575</color>
 </resources>

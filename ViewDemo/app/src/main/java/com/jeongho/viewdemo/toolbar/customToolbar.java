@@ -20,6 +20,7 @@ import com.jeongho.viewdemo.R;
 public class CustomToolbar extends Toolbar{
 
     private LayoutInflater mLayoutInflater;
+    private View mCenterView;
     private TextView mCenterTv;
     private ImageButton mRightIb;
     public CustomToolbar(Context context) {
@@ -32,19 +33,20 @@ public class CustomToolbar extends Toolbar{
 
     public CustomToolbar(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
         initCenterView();
     }
 
     private void initCenterView() {
+
         mLayoutInflater = LayoutInflater.from(getContext());
-        View centerView = mLayoutInflater.inflate(R.layout.custom_toolbar, null);
-        mCenterTv = (TextView) centerView.findViewById(R.id.tv_center);
-        mRightIb = (ImageButton) centerView.findViewById(R.id.ib_right);
+        mCenterView = mLayoutInflater.inflate(R.layout.custom_toolbar, null);
+        mCenterTv = (TextView) mCenterView.findViewById(R.id.tv_center);
+        mRightIb = (ImageButton) mCenterView.findViewById(R.id.ib_right);
 
         LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER_HORIZONTAL);
-        addView(centerView, layoutParams);
+
+        addView(mCenterView, layoutParams);
     }
 
     @Override
