@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true">
         <activity android:name=".MainActivity"
-            android:theme="@style/CustomTheme.Day">
+            android:theme="@style/CustomTheme.Night">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
