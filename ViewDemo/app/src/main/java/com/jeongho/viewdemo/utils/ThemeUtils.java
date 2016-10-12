@@ -10,7 +10,7 @@ import com.jeongho.viewdemo.R;
 
 public class ThemeUtils {
 
-    public static boolean isDay;
+    public static boolean isDay = true;
 
     public static void changeTheme(Activity aty){
         if (isDay){

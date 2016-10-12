@@ -2,7 +2,9 @@ package com.jeongho.viewdemo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.jeongho.viewdemo.statusbar.StatusBarAty;
 import com.jeongho.viewdemo.toolbar.CustomToolbarAty;
@@ -29,7 +31,8 @@ public class MainActivity extends AppCompatActivity{
      *  change the theme of MainActivity
      */
     @OnClick(R.id.btn_change_theme) void changeAtyTheme(){
-        ThemeUtils.isDay = false;
+        Toast.makeText(this, "aaa", Toast.LENGTH_SHORT).show();
+        ThemeUtils.isDay = !ThemeUtils.isDay;
         //ThemeUtils.changeTheme(this);
         MainActivity.this.recreate();
     }
@@ -48,7 +51,13 @@ public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         ThemeUtils.changeTheme(this);
+        if (ThemeUtils.isDay = true){
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        }else {
+            //getWindow().getDecorView().setSystemUiVisibility(View.de);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
